@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookmark Tools</title>
+</head>
+<body>
+    <h1>Welcome to BookmarkTools</h1>
+
+    <!-- Include a script tag to define the JavaScript variable -->
+    <script>
+        // Set the JavaScript variable to the provided code
+        var javascriptVar = "javascript:(function() { var fileName = prompt('Enter desired file name:'); var userText = prompt('Enter the desired text:'); if (userText !== null) { var blob = new Blob([userText], { type: 'text/plain' }); var link = document.createElement('a'); link.download = fileName + '.txt'; link.href = window.URL.createObjectURL(blob); link.click(); } })();";
+		var bbTwoVar = "javascript:(function() { alert('Discord Enhancements (BetterBrowser):\\n\\nThe Discord Enhancements mod is now active.\\nYou can:\\n*Shift-click server icons to open the file in a new tab\\n*Shift-click nitro emoji to open the file in a new tab\\n*Drag and drop emoji into new tabs or text bars\\n\\nReload this page or press the eject button in the bottom-right to disable the Discord Enhancements mod'); setInterval(function() { var elements = document.querySelectorAll('[draggable=\"false\"]'); for (var i = 0; i < elements.length; i++) { elements[i].setAttribute('draggable', 'true'); } }, 1); document.addEventListener('click', function(event) { if (event.shiftKey && event.target.classList.contains('wrapper-3kah-n')) { var imgElement = event.target.querySelector('img'); var imgUrl = imgElement.getAttribute('src'); var gifUrl = imgUrl.replace('.webp', '.gif'); var img = new Image(); img.onload = function() { window.open(gifUrl, '_blank'); }; img.onerror = function() { window.open(imgUrl, '_blank'); }; img.src = gifUrl; } }); function handleShiftClick(event) { if (event.shiftKey) { event.preventDefault(); var link = this.getAttribute('src').replace('.webp', '.gif'); var tab = window.open(); tab.opener = null; tab.location = link; } } document.querySelectorAll('img.emoji[data-type=\"emoji\"][data-id]').forEach(function(element) { element.addEventListener('click', handleShiftClick); }); var observer = new MutationObserver(function(mutationsList, observer) { mutationsList.forEach(function(mutation) { if (mutation.addedNodes.length) { mutation.addedNodes.forEach(function(node) { if (node.nodeType === 1 && node.matches('img.emoji[data-type=\"emoji\"][data-id]')) { node.addEventListener('click', handleShiftClick); } }); } }); }); observer.observe(document.body, { childList: true, subtree: true }); var button = document.createElement('button'); button.setAttribute('aria-label', 'User Settings'); button.setAttribute('type', 'button'); button.setAttribute('class', 'button-12Fmur enabled-9OeuTA button-ejjZWC lookBlank-FgPMy6 colorBrand-2M3O3N grow-2T4nbg button-12Fmur'); var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'icon-3XHs8t'); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('role', 'img'); svg.setAttribute('width', '18'); svg.setAttribute('height', '18'); svg.setAttribute('viewBox', '0 0 24 24'); var path = document.createElementNS('http://www.w3.org/2000/svg', 'path'); path.setAttribute('fill', 'currentColor'); path.setAttribute('d', 'M10.418 13L12.708 15.294L11.292 16.706L6.586 11.991L11.294 7.292L12.707 8.708L10.41 11H21.949C21.446 5.955 17.177 2 12 2C6.486 2 2 6.487 2 12C2 17.513 6.486 22 12 22C17.177 22 21.446 18.046 21.949 13H10.418Z'); svg.appendChild(path); button.appendChild(svg); button.style.position = 'fixed'; button.style.bottom = '20px'; button.style.right = '20px'; button.style.background = '#4E4E4E'; button.style.borderRadius = '5px'; document.body.appendChild(button); button.addEventListener('click', function() { var popup = document.createElement('div'); popup.setAttribute('class', 'root-1CAIjD small-2xUY-3 fullscreenOnMobile-2971EC rootWithShadow-2hdL2J'); popup.setAttribute('style', 'opacity: 1; transform: scale(1);'); button.remove(); alert('Discord Enhancements (BetterBrowser) will be ejected.\\nPress OK to finish.\\n\\n*This will reload the page.'); location.reload(); });})();";
+    </script>
+
+    <!-- Use JavaScript to set the href attribute of the anchor -->
+    <p>Drag and drop any of the following links into your bookmarks bar to use them.</p>
+	<p>-----------------------------------------------------------------------------------------------</p>
+	
+	<p>This simple bookmark tool will allow you to easily create a text document with just a click!<br>
+    <a id="createFileLink" href="#" target="_blank">CreateFile</a><br>
+	
+	<p>BetterBrowser is a Discord client modification designed to enhance your Discord experience.<br>
+	<a id="betterBrowserTwoLink" href="#" target="_blank">BetterBrowser v2</a><br>
+</p>
+
+<script>
+    // Set the href attribute of the anchor using JavaScript
+    document.getElementById('createFileLink').href = javascriptVar;
+	document.getElementById('betterBrowserTwoLink').href = bbTwoVar;
+</script>
+
+</body>
+</html>
